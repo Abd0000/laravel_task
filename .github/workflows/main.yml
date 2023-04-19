@@ -7,7 +7,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: 'testing github action'
-        run: pwd
-      - name: 'testing Printing'
-        run: echo abdo
+      - uses: actions/checkout@v3
+       
+      - name: 'Login to docker hub '
+        run: docker login --username ${{secrets.DOCKER_USERNAME}} --password ${{secrets.DOCKER_PASSWORD}}
