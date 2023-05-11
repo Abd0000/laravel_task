@@ -10,11 +10,10 @@
  <h1>Students Data</h1>
 
     @foreach ($students as $student)
-    <b>name: </b>  {{$student['name']}}
-    <br>
-    <b>country: </b> {{$student['country']}}
-    <br><br>
-        
+    <a href="/students/{{$student['id']}}">
+    {{$student['id']}}  - {{$student['name']}}
+</a>   
+<br>
     @endforeach
   
 
