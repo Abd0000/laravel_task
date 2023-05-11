@@ -1,6 +1,8 @@
 <?php
-
+namespace App\Models\students;
+use App\Models\students;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,27 +18,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/students', function () {
-    $user = [
-        'students' => [
-            [
-                'id' => '1',
-                'name' => 'abdo',
-                'country' => 'egypt'
-            ],
-            [
-                'id' => '2',
-                'name' => 'ahmed',
-                'country' => 'canada'
-            ],
-            [
-                'id' => '3',
-                'name' => 'yasser',
-                'country' => 'USA'
-            ]
-        ]
 
-    ];
-    return view('students', $user);
+
+Route::get('/students', function () {
+ $students=[
+    'students'=>students::all()
+ ];
+    return view('students', $students);
+});
+
+
+
+Route::get('/students/{id}', function ($id) {
+ $student=[
+    'student'=>students::find($id)
+ ];
+    return view('student', $student);
 });
 
