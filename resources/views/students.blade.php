@@ -1,21 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
- <h1>Students Data</h1>
+@extends('base')
 
-    @foreach ($students as $student)
-    <a href="/students/{{$student['id']}}">
-    {{$student['id']}}  - {{$student['name']}}
-</a>   
-<br>
+
+@section('content')
+<h2>Studnets Page</h2>
+@foreach ($students as $student)
+<x-single-student :student="$student"/>
     @endforeach
-  
-
-</body>
-</html>
+    
+@endsection

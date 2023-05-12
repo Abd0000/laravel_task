@@ -1,9 +1,10 @@
 <?php
 namespace Database\Seeders;
 
- use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\students;
+use App\Models\city;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,8 +14,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // students::factory(3)->create();
+        city::factory(50)->create();
+        students::factory(10)->create();
 
-     students::factory(10)->create();
+
+
+
     }
 }

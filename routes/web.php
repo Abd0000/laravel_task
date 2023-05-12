@@ -31,7 +31,7 @@ Route::get('/students', function () {
 
 Route::get('/students/{id}', function ($id) {
  $student=[
-    'student'=>students::find($id)
+    'student'=>students::with('city')->find($id)
  ];
     return view('student', $student);
 });

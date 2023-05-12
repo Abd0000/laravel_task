@@ -17,8 +17,8 @@ class studentsFactory extends Factory
     public function definition(): array
     {
         return [
-           'name'=>fake()->name(),
-           'city'=>fake()->city(),
+           'name'=>fake()->unique()->name(),
+           'city_id'=>fake()->numberBetween(1,50),
            'phone'=>fake()->phoneNumber(),
            'email'=>fake()->email()
         ];
